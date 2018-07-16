@@ -2,12 +2,15 @@ applications:
 - name: tracker-backlog
   path: ./applications/backlog-server/build/libs/backlog-server.jar
   routes:
-  - route: backlog-pal-manoj.apps.evans.pal.pivotal.io
+  - route: backlog-pal-INITIALS.apps.chicken.pal.pivotal.io
   memory: 1G
   instances: 1
   env:
-    #REGISTRATION_SERVER_ENDPOINT: http://registration-pal-manoj.apps.evans.pal.pivotal.io
+    GRANT_TYPE: client_credentials
+    SECURITY_USER_NAME: actuator
+    SECURITY_USER_PASSWORD: operations4red
   services:
   - tracker-backlog-database
   - tracker-service-registry
   - tracker-circuit-breaker-dashboard
+  - tracker-sso
