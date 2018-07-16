@@ -10,7 +10,7 @@ applications:
   services:
   - tracker-allocations-database
   - tracker-service-registry
-
+  - tracker-circuit-breaker-dashboard
 
 
 
